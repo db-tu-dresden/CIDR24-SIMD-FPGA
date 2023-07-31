@@ -1,0 +1,2 @@
+#!--Header -!#
+platform	compiler	version	target	operation	flavor	type	vectorsize	element_count	datasize	offloading_and_execution_time [ns]	execution_time [ns]	throughput [GiB/s]	1st result@10	2nd result@10

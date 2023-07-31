@@ -1,0 +1,9 @@
+target	operation	type	vectorsize	datasize	offloading_and_execution_time	execution_time	throughput GiB/s
+fpga	leading_zero_count	unsigned long	512	1048576	2575637703	13210223	0.0739248
+fpga	leading_zero_count	unsigned long	512	2097152	69944269	26380343	0.0740371
+fpga	leading_zero_count	unsigned long	512	4194304	97525762	52711076	0.0741068
+fpga	leading_zero_count	unsigned long	512	8388608	150129523	105380816	0.0741359
+fpga	leading_zero_count	unsigned long	512	16777216	255278300	210707436	0.074155
+fpga	leading_zero_count	unsigned long	512	33554432	466167676	421349581	0.0741664
+fpga	leading_zero_count	unsigned long	512	67108864	887947967	842645053	0.0741712
+fpga	leading_zero_count	unsigned long	512	134217728	1729658786	1685173253	0.0741763

@@ -1,0 +1,52 @@
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Di 18. Jul 21:36:29 CEST 2023
+Building Data Generator
+g++ autovec noArch
+lto-wrapper: Warnung: 10 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ autovec SSE
+lto-wrapper: Warnung: 10 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ autovec AVX
+lto-wrapper: Warnung: 10 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ autovec AVX512
+lto-wrapper: Warnung: 9 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ simd SSE
+lto-wrapper: Warnung: 2 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ simd SSE + VL
+lto-wrapper: Warnung: 2 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ simd AVX
+lto-wrapper: Warnung: 2 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ simd AVX + VL
+lto-wrapper: Warnung: 2 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+g++ simd AVX512
+lto-wrapper: Warnung: 2 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+clang++ autovec noArch
+clang++ autovec SSE
+clang++ autovec AVX
+clang++ autovec AVX512
+clang++ simd SSE
+clang++ simd SSE + VL
+clang++ simd AVX
+clang++ simd AVX + VL
+clang++ simd AVX512
+icpx autovec noArch
+icpx autovec SSE
+icpx autovec AVX
+icpx autovec AVX512
+icpx simd SSE
+icpx simd SSE + VL
+icpx simd AVX
+icpx simd AVX + VL
+icpx simd AVX512
+Finished build at Di 18. Jul 21:53:01 CEST 2023
+Build took 992 seconds

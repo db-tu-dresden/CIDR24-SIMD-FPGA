@@ -1,0 +1,61 @@
+device	compiler	version	arch-flags	rep	function	variant	SIMD-elementCount	byte_size	element_size	element_count	result	time_ns
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	1048576	8	131072	0x7f29ee7ba000	62612801
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	1048576	8	131072	0x7f29ee7ba000	229962
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	1048576	8	131072	0x7f29ee7ba000	183819
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	1048576	8	131072	0x7f29ee7ba000	169083
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	1048576	8	131072	0x7f29ee7ba000	159074
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	1048576	8	131072	0x7f29ee7ba000	148720
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	2097152	8	262144	0x7f30863bd000	63313009
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	2097152	8	262144	0x7f30863bd000	404666
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	2097152	8	262144	0x7f30863bd000	319371
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	2097152	8	262144	0x7f30863bd000	302701
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	2097152	8	262144	0x7f30863bd000	284184
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	2097152	8	262144	0x7f30863bd000	265097
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	4194304	8	524288	0x7f34b6f43000	62182317
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	4194304	8	524288	0x7f34b6f43000	763505
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	4194304	8	524288	0x7f34b6f43000	593548
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	4194304	8	524288	0x7f34b6f43000	570312
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	4194304	8	524288	0x7f34b6f43000	500780
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	4194304	8	524288	0x7f34b6f43000	486847
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	8388608	8	1048576	0x7f83d90ff000	61527662
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	8388608	8	1048576	0x7f83d90ff000	1545178
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	8388608	8	1048576	0x7f83d90ff000	1124651
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	8388608	8	1048576	0x7f83d90ff000	1116453
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	8388608	8	1048576	0x7f83d90ff000	963234
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	8388608	8	1048576	0x7f83d90ff000	944643
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	16777216	8	2097152	0x7f27ef4bd000	58792651
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	16777216	8	2097152	0x7f27ef4bd000	2989094
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	16777216	8	2097152	0x7f27ef4bd000	2204807
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	16777216	8	2097152	0x7f27ef4bd000	2202281
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	16777216	8	2097152	0x7f27ef4bd000	1837704
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	16777216	8	2097152	0x7f27ef4bd000	1826974
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	33554432	8	4194304	0x7fd335091000	58863557
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	33554432	8	4194304	0x7fd335091000	5916688
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	33554432	8	4194304	0x7fd335091000	4318655
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	33554432	8	4194304	0x7fd335091000	4306872
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	33554432	8	4194304	0x7fd335091000	3635361
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	33554432	8	4194304	0x7fd335091000	3613408
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	67108864	8	8388608	0x7f7d9d436000	65124717
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	67108864	8	8388608	0x7f7d9d436000	11806248
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	67108864	8	8388608	0x7f7d9d436000	8605535
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	67108864	8	8388608	0x7f7d9d436000	8594280
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	67108864	8	8388608	0x7f7d9d436000	7230678
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	67108864	8	8388608	0x7f7d9d436000	7198581
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	134217728	8	16777216	0x7f96ef2af000	76791400
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	134217728	8	16777216	0x7f96ef2af000	23661484
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	134217728	8	16777216	0x7f96ef2af000	17420325
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	134217728	8	16777216	0x7f96ef2af000	17428662
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	134217728	8	16777216	0x7f96ef2af000	14458858
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	134217728	8	16777216	0x7f96ef2af000	14393490
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	536870912	8	67108864	0x7fa99d030000	178932495
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	536870912	8	67108864	0x7fa99d030000	104122219
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	536870912	8	67108864	0x7fa99d030000	74824136
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	536870912	8	67108864	0x7fa99d030000	74961033
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	536870912	8	67108864	0x7fa99d030000	63587857
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	536870912	8	67108864	0x7fa99d030000	63442984
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	16	1073741824	8	134217728	0x7fa6bb4b9000	283049720
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	16	1073741824	8	134217728	0x7fa6bb4b9000	206862687
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	32	1073741824	8	134217728	0x7fa6bb4b9000	148904961
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	32	1073741824	8	134217728	0x7fa6bb4b9000	148545475
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA - warmup	0	aggregate	scalar	64	1073741824	8	134217728	0x7fa6bb4b9000	125518541
+FPGA	/opt/intel/oneapi/compiler/2022.0.1/linux/bin/icpx	2022.0.0	FPGA	1	aggregate	scalar	64	1073741824	8	134217728	0x7fa6bb4b9000	125883233

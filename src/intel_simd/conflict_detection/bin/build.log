@@ -1,0 +1,11 @@
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Di 18. Jul 21:36:04 CEST 2023
+g++
+lto-wrapper: Warnung: 3 LTRANS-Aufträge werden seriell compiliert
+lto-wrapper: Anmerkung: see the »-flto« option documentation for more information
+clang++
+icpx
+Finished build at Di 18. Jul 21:36:28 CEST 2023
+Build took 24 seconds

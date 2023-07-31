@@ -1,0 +1,2 @@
+target	type	vectorsize	datasize	offloading_and_execution_time	execution_times	(avg) throughput [MiB/s]	data@10	results@10	flush_data@10	flush_results@10
+FPGA	uint64_t	1024	268435456	178935.000000	141011.000000	1815.461205	[4, 15, 9, 24, 18, 8, 6, 14, 11, 18]	[0, 0, 0, 0, 0, 0, 0, 0, 0, 16]	-	-

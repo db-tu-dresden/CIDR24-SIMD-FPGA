@@ -1,0 +1,2688 @@
+bench_aggregate_autovec_smallint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_smallint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_bigint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui8_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui16_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui32_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_aggregate_autovec_ui64_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/intel_simd/filtered_agg/aggregate_autovec_bench_oneApi.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_smallint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_bigint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui8_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui16_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui32_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_lzc_unrolled_and_aggregate_outDevice_ui64_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/lzc_unrolled_and_aggregate_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_smallint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_bigint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui8_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui16_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui32_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_modulo_and_aggregate_outDevice_ui64_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/modulo_test_and_aggregate.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_smallint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_bigint_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui8_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI8 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui16_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI16 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui32_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI32 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL128_to_512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 -DVL256 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL1K_to_4K: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 -DVL2048 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL128: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL128 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL256: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL256 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL512: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL512 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL1k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL1024 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL2k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL2048 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+
+bench_hadd_ui64_VL4k: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	-DUI64 -DVL4096 \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	src/hadd_test.cpp $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+

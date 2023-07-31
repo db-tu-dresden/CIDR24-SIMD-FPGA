@@ -1,0 +1,14 @@
+bench_{{ operator }}_{{ datatype }}_VL{{ vector_length }}: benchmark.a
+	icpx \
+	-fsycl $(ALL_CXXFLAGS) -v \
+	$(foreach L,$(INC_DIRS),-I$L) \
+	$(foreach D,$(DEFINES),-D$D) \
+	{{ dtypeDef }} {{ vlDef }} \
+	-fintelfpga -Xshardware -fsycl-device-code-split=off \
+	-Xssave-temps \
+	-reuse-exe=build/$@.fpga -Xsoutput-report-folder=build/$@.prj \
+	-Xsboard=$(BOARD) \
+	-qactypes -fsycl-unnamed-lambda \
+	-o build/$@.fpga \
+	{{ source }} $(foreach D,$(LIB_DIRS),-L$D) $(foreach L,$(LIBS),-l$L) -static
+

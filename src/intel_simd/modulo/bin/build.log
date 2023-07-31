@@ -1,0 +1,166 @@
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 
+Starting build at Sa 22. Jul 16:31:30 CEST 2023
+clang++
+/home/jpietrzyk/Own/Work/cidr24/src/intel_simd/modulo/modulo_simd.cpp:14:10: fatal error: 'tslintrin.hpp' file not found
+#include "tslintrin.hpp"
+         ^~~~~~~~~~~~~~~
+1 error generated.
+Finished build at Sa 22. Jul 16:31:32 CEST 2023
+Build took 2 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:34:06 CEST 2023
+clang++
+/home/jpietrzyk/Own/Work/cidr24/src/intel_simd/modulo/modulo_simd.cpp:14:10: fatal error: 'tslintrin.hpp' file not found
+#include "tslintrin.hpp"
+         ^~~~~~~~~~~~~~~
+1 error generated.
+Finished build at Sa 22. Jul 16:34:07 CEST 2023
+Build took 1 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:34:53 CEST 2023
+clang++
+Finished build at Sa 22. Jul 16:34:55 CEST 2023
+Build took 2 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:46:16 CEST 2023
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:46:21 CEST 2023
+clang++
+Finished build at Sa 22. Jul 16:46:32 CEST 2023
+Build took 11 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:46:56 CEST 2023
+clang++
+Finished build at Sa 22. Jul 16:47:10 CEST 2023
+Build took 14 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:47:50 CEST 2023
+clang++
+Finished build at Sa 22. Jul 16:48:04 CEST 2023
+Build took 14 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:48:59 CEST 2023
+clang++
+Finished build at Sa 22. Jul 16:49:13 CEST 2023
+Build took 14 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 16:49:28 CEST 2023
+clang++
+Finished build at Sa 22. Jul 16:49:42 CEST 2023
+Build took 14 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:34:08 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:34:22 CEST 2023
+Build took 14 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:34:57 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:35:11 CEST 2023
+Build took 14 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:36:32 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:36:45 CEST 2023
+Build took 13 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:38:42 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:39:01 CEST 2023
+Build took 19 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:42:57 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:43:05 CEST 2023
+Build took 8 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:46:39 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:46:48 CEST 2023
+Build took 9 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:48:35 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:48:45 CEST 2023
+Build took 10 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:49:32 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:49:41 CEST 2023
+Build took 9 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 18:52:21 CEST 2023
+clang++
+Finished build at Sa 22. Jul 18:52:29 CEST 2023
+Build took 8 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 20:01:51 CEST 2023
+clang++
+Finished build at Sa 22. Jul 20:01:53 CEST 2023
+Build took 2 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 20:02:20 CEST 2023
+clang++
+Finished build at Sa 22. Jul 20:02:23 CEST 2023
+Build took 3 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 20:02:48 CEST 2023
+clang++
+Finished build at Sa 22. Jul 20:02:56 CEST 2023
+Build took 8 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 20:03:25 CEST 2023
+clang++
+Finished build at Sa 22. Jul 20:03:33 CEST 2023
+Build took 8 seconds
+clang++ version: 15.0.7
+g++ version: 13.1.1
+icpx version: 2023.1.0
+Starting build at Sa 22. Jul 20:04:17 CEST 2023
+clang++
+Finished build at Sa 22. Jul 20:04:25 CEST 2023
+Build took 8 seconds
